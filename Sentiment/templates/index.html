@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analyzer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Sentiment Analyzer</h1>
+            <p class="subtitle">Analyze the sentiment of any text</p>
+        </header>
+
+        <main class="main-content">
+            <div class="card">
+                <form id="sentimentForm" class="form">
+                    <div class="form-group">
+                        <label for="textInput">Enter your text:</label>
+                        <textarea 
+                            id="textInput" 
+                            class="textarea" 
+                            placeholder="Type at least 4 words to analyze sentiment..."
+                            rows="6"
+                        ></textarea>
+                        <p class="hint">Minimum 4 words required</p>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Analyze Sentiment</button>
+                </form>
+
+                <div id="resultContainer" class="result-container hidden">
+                    <div id="resultBox" class="result-box">
+                        <div class="result-header">
+                            <h2>Analysis Result</h2>
+                        </div>
+                        <div id="sentimentResult" class="sentiment-result"></div>
+                        <div id="confidenceResult" class="confidence-result"></div>
+                    </div>
+                </div>
+
+                <div id="errorContainer" class="error-container hidden">
+                    <p id="errorMessage" class="error-message"></p>
+                </div>
+            </div>
+
+            <div class="info-section">
+                <h3>How it works</h3>
+                <ul class="info-list">
+                    <li>Enter a sentence or phrase with at least 4 words</li>
+                    <li>The AI analyzes the text using machine learning</li>
+                    <li>Get instant sentiment classification: Positive, Negative, or Neutral</li>
+                    <li>View confidence score for the prediction</li>
+                </ul>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2025 Sentiment Analyzer | Powered by Machine Learning & NLP</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
